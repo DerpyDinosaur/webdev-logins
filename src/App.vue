@@ -2,10 +2,11 @@
 	<nav>
 		<h3 @click="demo=0">Flippy</h3>
 		<h3 @click="demo=1">Minimal</h3>
-		<h3 @click="demo=2"></h3>
+		<h3 @click="demo=2">Multi-Step</h3>
 	</nav>
 	<FlippyLogin v-if="demo===0"/>
 	<Minimal v-if="demo===1"/>
+	<MultiStep v-if="demo===2"/>
 </template>
 
 <script lang="ts">
@@ -14,16 +15,18 @@
 	//||
 	import FlippyLogin from './components/FlippyLogin.vue'
 	import Minimal from './components/Minimal.vue'
+	import MultiStep from './components/MultiStep.vue'
 
 	export default{
 		name:'app',
 		components:{
 			FlippyLogin,
-			Minimal
+			Minimal,
+			MultiStep
 		},
 		data(){
 			return{
-				demo: 1
+				demo: 2
 			}
 		}
 	}
